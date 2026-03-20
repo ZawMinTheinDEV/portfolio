@@ -1,8 +1,8 @@
 const stats = [
-    { value: "4+", label: "Years Experience" },
-    { value: "3+", label: "Production Systems" },
-    { value: "3", label: "Languages Spoken" },
-    { value: "2", label: "Degrees" },
+    { value: "4.5+", label: "Years Experience" },
+    { value: "10+", label: "Production Projects" },
+    { value: "4", label: "Languages Spoken" },
+    { value: "2", label: "Certifications" },
 ];
 
 export default function About() {
@@ -46,10 +46,12 @@ export default function About() {
                                     fontSize: "0.95rem",
                                 }}
                             >
-                                I am a highly motivated Lead Systems Engineer and Full-Stack Developer
-                                with a strong passion for building innovative web applications and robust
-                                APIs. Currently based in Akita, Japan, I bring expertise across back-end
-                                architecture, front-end development, and cloud infrastructure.
+                                Shipped a production booking platform in 30 days with zero post-launch
+                                security incidents — one example of 4.5+ years delivering
+                                production-grade web applications across TypeScript, Java, Python, and
+                                PHP. Leading teams of up to 8 engineers while staying hands-on, owning
+                                architecture decisions, CI/CD pipelines, and cloud infrastructure on
+                                AWS and GCP.
                             </p>
                             <p
                                 style={{
@@ -61,9 +63,9 @@ export default function About() {
                             >
                                 I specialise in delivering high-quality, scalable solutions using
                                 Next.js, Node.js, and Java Spring Boot — paired with cloud deployment
-                                on AWS and GCP. Beyond the code, I thrive in leadership roles:
-                                directing concurrent projects, conducting code reviews, and mentoring
-                                engineers to perform at their best.
+                                on AWS and GCP. Known for delivering under pressure, mentoring teams
+                                through rigorous code reviews, and turning complex requirements into
+                                clean, scalable software.
                             </p>
                             <p
                                 style={{
@@ -72,9 +74,8 @@ export default function About() {
                                     fontSize: "0.95rem",
                                 }}
                             >
-                                When I am not shipping features, I enjoy contributing to technical
-                                communities and sharing knowledge — a value rooted in my time leading
-                                the UCSMTC technology committee.
+                                When not shipping features, I enjoy helping others and sharing knowledge — a value rooted in my time leading
+                                the UCSMTC technology committee at UCSM.
                             </p>
                         </div>
 
@@ -94,10 +95,10 @@ export default function About() {
                             </p>
                             <div style={{ display: "flex", flexWrap: "wrap", gap: "0.6rem" }}>
                                 {[
-                                    { lang: "English", level: "Native" },
+                                    { lang: "English", level: "Fluent" },
                                     { lang: "Burmese", level: "Native" },
-                                    { lang: "Hindi", level: "Professional" },
-                                    { lang: "Japanese", level: "Working" },
+                                    { lang: "Japanese", level: "N4" },
+                                    { lang: "Hindi", level: "Conversational" },
                                 ].map(({ lang, level }) => (
                                     <div
                                         key={lang}

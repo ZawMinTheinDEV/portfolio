@@ -1,3 +1,36 @@
+import { 
+    SiNextdotjs, SiReact, SiTypescript, SiNodedotjs, SiNestjs, 
+    SiExpress, SiSpringboot, SiPython, SiFastapi, SiDjango, 
+    SiGooglecloud, SiPostgresql, SiMysql, SiRedis, SiStripe, 
+    SiPhp, SiLaravel, SiPrisma, SiDocker, SiGit 
+} from "react-icons/si";
+import { FaJava, FaAws } from "react-icons/fa";
+
+const techTags = [
+    { name: "Next.js", icon: SiNextdotjs },
+    { name: "React", icon: SiReact },
+    { name: "TypeScript", icon: SiTypescript },
+    { name: "Node.js", icon: SiNodedotjs },
+    { name: "Nest.js", icon: SiNestjs },
+    { name: "Express.js", icon: SiExpress },
+    { name: "Java", icon: FaJava },
+    { name: "Spring Boot", icon: SiSpringboot },
+    { name: "Python", icon: SiPython },
+    { name: "FastAPI", icon: SiFastapi },
+    { name: "Django", icon: SiDjango },
+    { name: "AWS", icon: FaAws },
+    { name: "GCP", icon: SiGooglecloud },
+    { name: "PostgreSQL", icon: SiPostgresql },
+    { name: "MySQL", icon: SiMysql },
+    { name: "Redis", icon: SiRedis },
+    { name: "Stripe", icon: SiStripe },
+    { name: "PHP", icon: SiPhp },
+    { name: "Laravel", icon: SiLaravel },
+    { name: "Prisma", icon: SiPrisma },
+    { name: "Docker", icon: SiDocker },
+    { name: "Git", icon: SiGit },
+];
+
 const skills = [
     {
         title: "Front-End Development",
@@ -25,11 +58,12 @@ const skills = [
             </svg>
         ),
         items: [
-            "Node.js / Nest.js",
+            "Node.js / Nest.js / Express.js",
             "Java Spring Boot",
             "PHP / Laravel",
-            "REST APIs",
-            "PostgreSQL / MySQL",
+            "Python / FastAPI / Django",
+            "REST APIs / tRPC",
+            "PostgreSQL / MySQL / Redis",
         ],
     },
     {
@@ -161,13 +195,10 @@ export default function Skills() {
                         gap: "0.75rem",
                     }}
                 >
-                    {[
-                        "Next.js", "React", "TypeScript", "Node.js", "Nest.js",
-                        "Java", "Spring Boot", "AWS", "GCP", "PostgreSQL",
-                        "MySQL", "Stripe", "PHP", "Laravel", "Prisma", "Git",
-                    ].map((tech) => (
-                        <span key={tech} className="cyan-tag">
-                            {tech}
+                    {techTags.map((tech) => (
+                        <span key={tech.name} className="cyan-tag" style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                            <tech.icon size={16} />
+                            {tech.name}
                         </span>
                     ))}
                 </div>

@@ -6,9 +6,9 @@ const terminalLines = [
     { prompt: "~/portfolio $", cmd: "whoami", delay: 400 },
     { text: "zaw-min-thein", delay: 700 },
     { prompt: "~/portfolio $", cmd: "cat skills.json", delay: 1200 },
-    { text: '[ "Next.js", "Node.js", "AWS", "Java" ]', delay: 1500 },
-    { prompt: "~/portfolio $", cmd: "echo $STATUS", delay: 2000 },
-    { text: "Open to opportunities", delay: 2300, cyan: true },
+    { text: '[ "TypeScript", "Java", "PHP", "Python", "Next.js", "AWS" ]', delay: 1500 },
+    { prompt: "~/portfolio $", cmd: "echo $YEARS_EXP", delay: 2000 },
+    { text: "4.5+ years · Production-Grade Engineering", delay: 2300, cyan: true },
     { prompt: "~/portfolio $", cmd: "_", delay: 2800, cursor: true },
 ];
 
@@ -56,7 +56,7 @@ export default function Hero() {
 
             <div
                 style={{
-                    maxWidth: "1100px",
+                    maxWidth: "1200px",
                     margin: "0 auto",
                     width: "100%",
                     display: "grid",
@@ -120,7 +120,7 @@ export default function Hero() {
                             letterSpacing: "0.02em",
                         }}
                     >
-                        Lead Full-Stack Engineer &amp; Project Leader
+                        Project Lead &amp; System Engineer
                     </h2>
 
                     <p
@@ -129,16 +129,19 @@ export default function Hero() {
                             color: "var(--text-secondary)",
                             lineHeight: 1.8,
                             fontSize: "1rem",
-                            maxWidth: "480px",
+                            maxWidth: "680px",
                             marginBottom: "2.5rem",
                         }}
                     >
-                        I build scalable web applications and robust APIs with a focus on
-                        performance and clean architecture. Currently leading projects at{" "}
+                        Lead Systems Engineer & Full-Stack Developer with 4.5+ years of experience building and shipping production-
+                        grade web applications across TypeScript, Java, Python and PHP. I lead teams of up to 8 engineers by staying
+                        hands-on, owning architecture decisions, CI/CD pipelines, and cloud infrastructure on AWS and GCP while
+                        remaining active in the codebase. Known for delivering under pressure, mentoring teams through rigorous code
+                        reviews, and turning complex requirements into clean, scalable software.
                         <span style={{ color: "var(--cyan)", fontWeight: 500 }}>
                             株式会社ONE TERRACE
                         </span>{" "}
-                        in Akita, Japan.
+                        in Tokyo, Japan.
                     </p>
 
                     <div
