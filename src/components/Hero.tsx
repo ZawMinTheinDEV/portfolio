@@ -133,15 +133,13 @@ export default function Hero() {
                             marginBottom: "2.5rem",
                         }}
                     >
-                        Lead Systems Engineer & Full-Stack Developer with 4.5+ years of experience building and shipping production-
-                        grade web applications across TypeScript, Java, Python and PHP. I lead teams of up to 8 engineers by staying
-                        hands-on, owning architecture decisions, CI/CD pipelines, and cloud infrastructure on AWS and GCP while
-                        remaining active in the codebase. Known for delivering under pressure, mentoring teams through rigorous code
-                        reviews, and turning complex requirements into clean, scalable software.
+                        Lead Systems Engineer & Full-Stack Developer crafting production-grade web applications.
+                        I turn complex requirements into clean, scalable software while leading technical teams
+                        and owning architectural decisions at{" "}
                         <span style={{ color: "var(--cyan)", fontWeight: 500 }}>
                             株式会社ONE TERRACE
                         </span>{" "}
-                        in Tokyo, Japan.
+                        in Akita, Japan.
                     </p>
 
                     <div
@@ -154,8 +152,8 @@ export default function Hero() {
                         <a href="#projects" className="btn-primary">
                             <span>View Projects</span>
                         </a>
-                        <a 
-                            href="/Resume/Zaw%20Min%20Thein%20SE.pdf" 
+                        <a
+                            href="/Resume/Zaw%20Min%20Thein%20SE.pdf"
                             download="Zaw_Min_Thein_Resume.pdf"
                             className="btn-secondary"
                             style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}

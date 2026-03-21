@@ -2,7 +2,7 @@ const stats = [
     { value: "4.5+", label: "Years Experience" },
     { value: "10+", label: "Production Projects" },
     { value: "4", label: "Languages Spoken" },
-    { value: "2", label: "Certifications" },
+    { value: "8", label: "Engineers Mentored" },
 ];
 
 export default function About() {
