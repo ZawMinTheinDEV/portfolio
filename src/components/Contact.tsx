@@ -1,3 +1,56 @@
+"use client";
+
+import React, { useState } from "react";
+
+const CopyButton = ({ text }: { text: string }) => {
+    const [copied, setCopied] = useState(false);
+
+    const handleCopy = (e: React.MouseEvent) => {
+        e.preventDefault();
+        e.stopPropagation();
+        navigator.clipboard.writeText(text);
+        setCopied(true);
+        setTimeout(() => setCopied(false), 2000);
+    };
+
+    return (
+        <button
+            onClick={handleCopy}
+            style={{
+                background: "transparent",
+                border: "none",
+                cursor: "pointer",
+                color: copied ? "var(--cyan)" : "var(--text-muted)",
+                display: "flex",
+                alignItems: "center",
+                justifyContent: "center",
+                padding: "8px",
+                borderRadius: "6px",
+                transition: "all 0.2s ease",
+            }}
+            onMouseEnter={(e) => {
+                if (!copied) e.currentTarget.style.color = "var(--cyan)";
+            }}
+            onMouseLeave={(e) => {
+                if (!copied) e.currentTarget.style.color = "var(--text-muted)";
+            }}
+            aria-label="Copy to clipboard"
+            title="Copy"
+        >
+            {copied ? (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                </svg>
+            ) : (
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="9" y="9" width="13" height="13" rx="2" ry="2"></rect>
+                    <path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"></path>
+                </svg>
+            )}
+        </button>
+    );
+};
+
 const contactItems = [
     {
         label: "Email",
@@ -145,12 +198,15 @@ export default function Contact() {
                                 style={{
                                     padding: "1.25rem 1.5rem",
                                     display: "flex",
-                                    gap: "1rem",
+                                    justifyContent: "space-between",
                                     alignItems: "center",
                                     textDecoration: "none",
                                 }}
                             >
-                                {inner}
+                                <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+                                    {inner}
+                                </div>
+                                <CopyButton text={item.value} />
                             </a>
                         ) : (
                             <div
@@ -159,25 +215,21 @@ export default function Contact() {
                                 style={{
                                     padding: "1.25rem 1.5rem",
                                     display: "flex",
-                                    gap: "1rem",
+                                    justifyContent: "space-between",
                                     alignItems: "center",
                                 }}
                             >
-                                {inner}
+                                <div style={{ display: "flex", gap: "1rem", alignItems: "center" }}>
+                                    {inner}
+                                </div>
+                                <CopyButton text={item.value} />
                             </div>
                         );
                     })}
                 </div>
 
                 {/* CTA */}
-                <div
-                    className="reveal"
-                    style={{ textAlign: "center", marginTop: "3rem" }}
-                >
-                    <a href="mailto:zmtk2001@gmail.com" className="btn-secondary">
-                        Send Me an Email
-                    </a>
-                </div>
+
             </div>
         </section>
     );
