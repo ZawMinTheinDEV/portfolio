@@ -18,7 +18,8 @@ import {
     FiClock,
     FiServer,
     FiCode,
-    FiGitMerge
+    FiGitMerge,
+    FiExternalLink
 } from "react-icons/fi";
 import { FaAws, FaJava, FaWindows, FaApple, FaReact, FaNodeJs, FaPhp, FaVuejs } from "react-icons/fa";
 import { SiNextdotjs, SiLaravel, SiAstro, SiNestjs, SiSpringboot, SiMysql } from "react-icons/si";
@@ -54,6 +55,7 @@ const projects = [
         category: "Full-Stack",
         icon: FiClock,
         order: 1,
+        link: "",
     },
     {
         name: "One Moment",
@@ -62,6 +64,7 @@ const projects = [
         category: "Full-Stack",
         icon: FiCalendar,
         order: 2,
+        link: "https://one-moment.jp/",
     },
     {
         name: "Katakata",
@@ -70,6 +73,7 @@ const projects = [
         category: "Full-Stack",
         icon: FiCpu,
         order: 3,
+        link: "",
     },
     {
         name: "Quick Sign",
@@ -78,6 +82,7 @@ const projects = [
         category: "Full-Stack",
         icon: FiPenTool,
         order: 4,
+        link: "",
     },
     {
         name: "Candidate Management System",
@@ -86,6 +91,7 @@ const projects = [
         category: "Full-Stack",
         icon: FiUserPlus,
         order: 5,
+        link: "",
     },
     {
         name: "Saison Japanese Learning Website",
@@ -94,6 +100,7 @@ const projects = [
         category: "Front-End",
         icon: FiGlobe,
         order: 6,
+        link: "https://saisonjplesson.oneterrace.jp/en/individual/",
     },
     {
         name: "One Channel Website",
@@ -102,6 +109,7 @@ const projects = [
         category: "Front-End",
         icon: FiMonitor,
         order: 7,
+        link: "https://one-channel.oneterrace.jp/",
     },
     {
         name: "Taiheiyo Recruitment Website",
@@ -110,6 +118,7 @@ const projects = [
         category: "Front-End",
         icon: FiFileText,
         order: 8,
+        link: "https://recruit.taiheiyo-c.co.jp/",
     },
     {
         name: "Politician Support System",
@@ -118,14 +127,16 @@ const projects = [
         category: "Full-Stack",
         icon: FiBriefcase,
         order: 9,
+        link: "",
     },
     {
-        name: "Tokumemo",
+        name: "Tokumame",
         description: "Transferred services, maintained operations, and implemented security hardening using Spring Microservices, Redis, and .NET. Managed infrastructure on AWS.",
         stack: ["Java", "Vue.js", "AWS", "CI/CD"],
         category: "System Dev",
         icon: FiShield,
         order: 10,
+        link: "",
     },
     {
         name: "Study Karate",
@@ -134,6 +145,7 @@ const projects = [
         category: "Full-Stack",
         icon: FiVideo,
         order: 11,
+        link: "",
     },
     {
         name: "Call Center Management System",
@@ -142,6 +154,7 @@ const projects = [
         category: "Full-Stack",
         icon: FiHeadphones,
         order: 12,
+        link: "",
     },
     {
         name: "Employee Evaluation System",
@@ -150,6 +163,7 @@ const projects = [
         category: "Back-End",
         icon: FiUsers,
         order: 13,
+        link: "",
     },
     {
         name: "Pyinnyar-Subuu LMS",
@@ -158,6 +172,7 @@ const projects = [
         category: "System Dev",
         icon: FiBookOpen,
         order: 14,
+        link: "",
     },
 ];
 
@@ -171,7 +186,7 @@ const categoryColors: Record<string, string> = {
 
 export default function Projects() {
     const [showAll, setShowAll] = useState(false);
-    
+
     // Sort projects by order, ensuring those without order fall to the end
     const sortedProjects = [...projects].sort((a, b) => (a.order || 999) - (b.order || 999));
     const visibleProjects = showAll ? sortedProjects : sortedProjects.slice(0, 6);
@@ -221,6 +236,7 @@ export default function Projects() {
                 >
                     {visibleProjects.map((proj, i) => {
                         const Icon = proj.icon;
+
                         return (
                             <div
                                 key={i}
@@ -231,6 +247,8 @@ export default function Projects() {
                                     flexDirection: "column",
                                     gap: "1rem",
                                     cursor: "default",
+                                    transition: "transform 0.3s ease, box-shadow 0.3s ease",
+                                    height: "100%",
                                 }}
                             >
                                 {/* Header */}
@@ -256,20 +274,22 @@ export default function Projects() {
                                     >
                                         <Icon size={20} />
                                     </div>
-                                    <span
-                                        style={{
-                                            padding: "0.2rem 0.6rem",
-                                            borderRadius: "100px",
-                                            fontSize: "0.7rem",
-                                            fontFamily: "'JetBrains Mono', monospace",
-                                            fontWeight: 500,
-                                            color: categoryColors[proj.category] || "var(--cyan)",
-                                            background: `${categoryColors[proj.category] || "var(--cyan)"}18`,
-                                            border: `1px solid ${categoryColors[proj.category] || "var(--cyan)"}30`,
-                                        }}
-                                    >
-                                        {proj.category}
-                                    </span>
+                                    <div style={{ display: "flex", alignItems: "center", gap: "0.5rem" }}>
+                                        <span
+                                            style={{
+                                                padding: "0.2rem 0.6rem",
+                                                borderRadius: "100px",
+                                                fontSize: "0.7rem",
+                                                fontFamily: "'JetBrains Mono', monospace",
+                                                fontWeight: 500,
+                                                color: categoryColors[proj.category] || "var(--cyan)",
+                                                background: `${categoryColors[proj.category] || "var(--cyan)"}18`,
+                                                border: `1px solid ${categoryColors[proj.category] || "var(--cyan)"}30`,
+                                            }}
+                                        >
+                                            {proj.category}
+                                        </span>
+                                    </div>
                                 </div>
 
                                 {/* Title */}
@@ -295,7 +315,38 @@ export default function Projects() {
                                 >
                                     {proj.description}
                                 </p>
-
+                                {proj.link && (
+                                    <div style={{ marginTop: "auto", paddingTop: "0.5rem" }}>
+                                        <a
+                                            href={proj.link}
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            style={{
+                                                display: "inline-flex",
+                                                alignItems: "center",
+                                                gap: "0.5rem",
+                                                padding: "0.5rem 1rem",
+                                                background: "rgba(34,211,238,0.1)",
+                                                color: "var(--cyan)",
+                                                border: "1px solid rgba(34,211,238,0.2)",
+                                                borderRadius: "6px",
+                                                fontSize: "0.8rem",
+                                                fontWeight: 500,
+                                                textDecoration: "none",
+                                                transition: "all 0.2s ease",
+                                                cursor: "pointer",
+                                            }}
+                                            onMouseOver={(e) => {
+                                                e.currentTarget.style.background = "rgba(34,211,238,0.2)";
+                                            }}
+                                            onMouseOut={(e) => {
+                                                e.currentTarget.style.background = "rgba(34,211,238,0.1)";
+                                            }}
+                                        >
+                                            <FiExternalLink size={14} /> View Project
+                                        </a>
+                                    </div>
+                                )}
                                 {/* Stack */}
                                 <div style={{ display: "flex", flexWrap: "wrap", gap: "0.5rem" }}>
                                     {proj.stack.map((tech) => {
@@ -322,11 +373,13 @@ export default function Projects() {
                                         );
                                     })}
                                 </div>
+
+
                             </div>
                         );
                     })}
                 </div>
-                
+
                 {projects.length > 6 && (
                     <div style={{ marginTop: "3rem", display: "flex", justifyContent: "center" }} className="reveal">
                         <button
