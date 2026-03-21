@@ -2,7 +2,7 @@ const experiences = [
     {
         role: "Project Lead and System Engineer",
         company: "株式会社ONE TERRACE",
-        location: "Tokyo, Japan",
+        location: "Tokyo, Japan | Satellite Office in Akita, Japan",
         period: "May 2023 — Present",
         current: true,
         highlights: [
