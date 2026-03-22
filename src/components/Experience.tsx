@@ -1,6 +1,6 @@
 const experiences = [
     {
-        role: "Project Lead and System Engineer",
+        role: "Lead Full-Stack System Engineer",
         company: "株式会社ONE TERRACE",
         location: "Tokyo, Japan | Satellite Office in Akita, Japan",
         period: "May 2023 — Present",

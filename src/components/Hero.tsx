@@ -120,7 +120,7 @@ export default function Hero() {
                             letterSpacing: "0.02em",
                         }}
                     >
-                        Project Lead &amp; System Engineer
+                        Lead Full-Stack System Engineer
                     </h2>
 
                     <p
@@ -133,7 +133,7 @@ export default function Hero() {
                             marginBottom: "2.5rem",
                         }}
                     >
-                        Lead Systems Engineer & Full-Stack Developer crafting production-grade web applications.
+                        Lead Full-Stack System Engineer crafting production-grade web applications.
                         I turn complex requirements into clean, scalable software while leading technical teams
                         and owning architectural decisions at{" "}
                         <span style={{ color: "var(--cyan)", fontWeight: 500 }}>
