@@ -8,7 +8,7 @@ const terminalLines = [
     { prompt: "~/portfolio $", cmd: "cat skills.json", delay: 1200 },
     { text: '[ "TypeScript", "Java", "PHP", "Python", "Next.js", "AWS" ]', delay: 1500 },
     { prompt: "~/portfolio $", cmd: "echo $YEARS_EXP", delay: 2000 },
-    { text: "4.5+ years · Production-Grade Engineering", delay: 2300, cyan: true },
+    { text: "5+ years · Production-Grade Engineering", delay: 2300, cyan: true },
     { prompt: "~/portfolio $", cmd: "_", delay: 2800, cursor: true },
 ];
 

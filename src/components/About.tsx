@@ -1,5 +1,5 @@
 const stats = [
-    { value: "4.5+", label: "Years Experience" },
+    { value: "5+", label: "Years Experience" },
     { value: "10+", label: "Production Projects" },
     { value: "4", label: "Languages Spoken" },
     { value: "8", label: "Engineers Mentored" },
@@ -47,7 +47,7 @@ export default function About() {
                                 }}
                             >
                                 Shipped a production booking platform in 30 days with zero post-launch
-                                security incidents — one example of 4.5+ years delivering
+                                security incidents — one example of 5+ years delivering
                                 production-grade web applications across TypeScript, Java, Python, and
                                 PHP. Leading teams of up to 8 engineers while staying hands-on, owning
                                 architecture decisions, CI/CD pipelines, and cloud infrastructure on
